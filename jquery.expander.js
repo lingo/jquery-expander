@@ -32,6 +32,7 @@
       // text displayed in a link instead of the hidden part of the element.
       // clicking this will expand/show the hidden/collapsed text
       expandText: 'read more',
+      expandTitle: 'Click here to see more text',
       expandPrefix: '&hellip; ',
 
       expandAfterSummary: false,
@@ -59,6 +60,7 @@
 
       // text to use for the link to re-collapse the text
       userCollapseText: 'read less',
+      userCollapseTitle: 'Click here to show only the summary',
       userCollapsePrefix: ' ',
 
 
@@ -251,7 +253,7 @@
           if ( o.userCollapse && !$this.find('span.' + o.lessClass).length ) {
             $this
             .find(detailSelector)
-            .append('<span class="' + o.lessClass + '">' + o.userCollapsePrefix + '<a href="#">' + o.userCollapseText + '</a></span>');
+            .append('<span class="' + o.lessClass + '">' + o.userCollapsePrefix + '<a title="' + o.userCollapseTitle + " href="#">' + o.userCollapseText + '</a></span>');
           }
 
           $this
@@ -341,7 +343,7 @@
 
     function buildMoreLabel(o) {
       var ret = '<span class="' + o.moreClass + '">' + o.expandPrefix;
-      ret += '<a href="#">' + o.expandText + '</a></span>';
+      ret += '<a title="' + o.expandTitle + '" href="#">' + o.expandText + '</a></span>';
       return ret;
     }
 
