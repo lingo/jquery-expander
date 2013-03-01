@@ -251,13 +251,11 @@
           $summEl = $this.find('div.' + o.summaryClass);
 
           if ( o.userCollapse && !$this.find('span.' + o.lessClass).length ) {
-            $this
-            .find(detailSelector)
-            .append('<span class="' + o.lessClass + '">' + o.userCollapsePrefix + '<a title="' + o.userCollapseTitle + " href="#">' + o.userCollapseText + '</a></span>');
+            $this.find(detailSelector)
+            .append('<span class="' + o.lessClass + '">' + o.userCollapsePrefix + '<a title="' + o.userCollapseTitle + ' href="#">' + o.userCollapseText + '</a></span>');
           }
 
-          $this
-          .find('span.' + o.lessClass + ' a')
+          $this.find('span.' + o.lessClass + ' a')
           .unbind('click.expander')
           .bind('click.expander', function(event) {
             event.preventDefault();
